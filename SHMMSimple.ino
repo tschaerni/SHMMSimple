@@ -2,6 +2,9 @@
 // MILLIVOLT METER USING LTC2400 24bit ADC CHIP
 // Software version 7.00
 // 4.096 volt precision reference (ADR4540)
+//
+// Modified 12.09.2016 rcerny robin@cerny.li
+//
 
 // --- Library includes -----------------------------------------------------------------------
 
@@ -205,16 +208,16 @@ void adjustDecimalPlaces(void) {
   ++g_number_of_decimals;
   if (g_number_of_decimals > 6)
     g_number_of_decimals = 0;
-    
+
   delay(DEBOUNCE_DELAY_MS);                   // Very simple de-bounce delay
 }
 
 void showIntro(void) {
   g_lcd.clear();
   g_lcd.setCursor(4, 0);
-  g_lcd.print("SCULLCOM");
+  g_lcd.print("Miup's");
   g_lcd.setCursor(0, 1);
-  g_lcd.print("Hobby Electronic");
+  g_lcd.print("Miupvolt Meter");
   delay(INTRO_DELAY_MS);
 }
 
@@ -239,7 +242,7 @@ void showCalibrationPrompt(void) {
 void showHeader(void) {
   g_lcd.clear();
   g_lcd.setCursor(0, 0);
-  g_lcd.print("Millivolt Meter");
+  g_lcd.print("Miupvolt Meter");
 }
 
 
